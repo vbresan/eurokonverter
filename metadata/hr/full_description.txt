@@ -1,0 +1,3 @@
+Kalkulator za konverziju hrvatskih kuna u eure (i obrnuto) po fiksiranom tečaju 1€ = 7.53450 kuna.
+
+Aplikacija ne traži pristup internetu.

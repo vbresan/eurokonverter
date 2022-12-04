@@ -1,0 +1,1 @@
+Calculator for converting Croatian kunas into euros at a fixed exchange rate
