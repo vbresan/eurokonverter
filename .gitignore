@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.idea/
+/gradle/wrapper/
+/gradlew
+/gradlew.bat
+/app/release/
+
