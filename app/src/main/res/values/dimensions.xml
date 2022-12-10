@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="image">50dp</dimen>
+    <dimen name="corner_radius">25dp</dimen>
     <dimen name="font_size">40sp</dimen>
 </resources>

@@ -23,7 +23,7 @@
             android:layout_width="@dimen/image"
             android:layout_height="@dimen/image"
             android:layout_gravity="center"
-            app:cardCornerRadius="250dp"
+            app:cardCornerRadius="@dimen/corner_radius"
             app:cardBackgroundColor="@color/white"
             >
             <ImageView
@@ -72,7 +72,7 @@
             android:layout_width="@dimen/image"
             android:layout_height="@dimen/image"
             android:layout_gravity="center"
-            app:cardCornerRadius="250dp"
+            app:cardCornerRadius="@dimen/corner_radius"
             app:cardBackgroundColor="@color/white"
             >
             <ImageView
