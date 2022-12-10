@@ -40,12 +40,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setInputViewScrolling(int id) {
 
-        LinearLayout view = findViewById(id);
-        if (view == null) {
-            return;
-        }
-
-        TextView inputView = (TextView) view.getChildAt(view.getChildCount() - 1);
+        TextView inputView = findViewById(id);
         if (inputView == null) {
             return;
         }
@@ -53,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         inputView.setMovementMethod(new CustomScrollingMovementMethod(this));
         scrollToEnd(inputView);
     }
+
     /**
      *
      * @param layoutId
@@ -70,15 +66,15 @@ public class MainActivity extends AppCompatActivity {
             eur.setBackgroundColor(Color.TRANSPARENT);
             hrk.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
 
-            inputView    = (TextView) hrk.getChildAt(hrk.getChildCount() - 1);
-            outputView   = (TextView) eur.getChildAt(eur.getChildCount() - 1);
+            inputView    = hrk.findViewById(R.id.textViewHRK);
+            outputView   = eur.findViewById(R.id.textViewEUR);
             selectedView = hrk;
         } else {
             hrk.setBackgroundColor(Color.TRANSPARENT);
             eur.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
 
-            inputView    = (TextView) eur.getChildAt(eur.getChildCount() - 1);
-            outputView   = (TextView) hrk.getChildAt(hrk.getChildCount() - 1);
+            inputView    = eur.findViewById(R.id.textViewEUR);
+            outputView   = hrk.findViewById(R.id.textViewHRK);
             selectedView = eur;
         }
     }
@@ -155,8 +151,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setInputViewScrolling(R.id.linearLayoutHRK);
-        setInputViewScrolling(R.id.linearLayoutEUR);
+        setInputViewScrolling(R.id.textViewHRK);
+        setInputViewScrolling(R.id.textViewEUR);
 
         setSelectedView(R.id.linearLayoutHRK);
     }
