@@ -54,9 +54,8 @@
             android:textSize="@dimen/font_size"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="kn"
-            android:padding="10dp"
-            android:minEms="2"
-            android:maxEms="2"
+            android:minEms="1"
+            android:maxEms="1"
         />
     </LinearLayout>
     <LinearLayout
@@ -103,9 +102,8 @@
             android:textSize="@dimen/font_size"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="€"
-            android:padding="10dp"
-            android:minEms="2"
-            android:maxEms="2"
+            android:minEms="1"
+            android:maxEms="1"
         />
     </LinearLayout>
     <androidx.gridlayout.widget.GridLayout
