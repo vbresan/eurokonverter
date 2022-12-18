@@ -37,20 +37,7 @@
         android:gravity="center_vertical"
         android:onClick="onCurrencySelected"
         >
-        <androidx.cardview.widget.CardView
-            android:layout_width="@dimen/image"
-            android:layout_height="@dimen/image"
-            android:layout_gravity="center"
-            app:cardCornerRadius="@dimen/corner_radius"
-            app:cardBackgroundColor="@color/white"
-            >
-            <ImageView
-                android:layout_width="@dimen/image"
-                android:layout_height="@dimen/image"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_hr"
-            />
-        </androidx.cardview.widget.CardView>
+        <include layout="@layout/image_hr" />
         <TextView
             android:id="@+id/textViewHRK"
             android:layout_width="match_parent"
@@ -85,20 +72,7 @@
         android:gravity="center_vertical"
         android:onClick="onCurrencySelected"
         >
-        <androidx.cardview.widget.CardView
-            android:layout_width="@dimen/image"
-            android:layout_height="@dimen/image"
-            android:layout_gravity="center"
-            app:cardCornerRadius="@dimen/corner_radius"
-            app:cardBackgroundColor="@color/white"
-            >
-            <ImageView
-                android:layout_width="@dimen/image"
-                android:layout_height="@dimen/image"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_eu"
-            />
-        </androidx.cardview.widget.CardView>
+        <include layout="@layout/image_eu" />
         <TextView
             android:id="@+id/textViewEUR"
             android:layout_width="match_parent"

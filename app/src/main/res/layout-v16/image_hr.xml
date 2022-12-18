@@ -1,0 +1,19 @@
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/image"
+        android:layout_height="@dimen/image"
+        android:layout_gravity="center"
+        app:cardCornerRadius="@dimen/corner_radius"
+        app:cardBackgroundColor="@color/white"
+        >
+        <ImageView
+            android:layout_width="@dimen/image"
+            android:layout_height="@dimen/image"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_hr"
+        />
+    </androidx.cardview.widget.CardView>
+</merge>
