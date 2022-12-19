@@ -1,0 +1,2 @@
+Support for old devices (min API 15)
+Ensuring leftwards arrow is properly displayed on all devices

@@ -1,0 +1,2 @@
+Podrška za stare uređaje (min API 15)
+Ispravno prikazivanje strelice ulijevo na svim uređajima
