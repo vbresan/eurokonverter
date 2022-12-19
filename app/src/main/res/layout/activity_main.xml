@@ -115,6 +115,8 @@
             android:onClick="onKeyPressed"
         />
         <Button
+            android:fontFamily="@font/la"
+            app:fontFamily="@font/la"
             app:layout_row="0"
             app:layout_column="2"
             android:layout_width="wrap_content"
