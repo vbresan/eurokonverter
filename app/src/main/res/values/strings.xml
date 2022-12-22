@@ -4,4 +4,6 @@
 
     <string name="PodijeliAplikaciju">Podijeli aplikaciju</string>
     <string name="ZaKonverzijuUpotrebljavam">Za konverziju kuna u eure upotrebljavam ovaj kalkulator. Vjerujem da i tebi može biti koristan:\n</string>
+    <string name="Konverzija">Konverzija</string>
+    <string name="KusurUEurima">Kusur u eurima</string>
 </resources>

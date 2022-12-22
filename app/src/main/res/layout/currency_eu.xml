@@ -1,0 +1,10 @@
+<merge
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+   <TextView
+       style="@style/TextViewCurrency"
+       android:text="€"
+       tools:ignore="HardcodedText"
+   />
+</merge>
