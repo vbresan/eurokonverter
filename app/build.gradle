@@ -15,8 +15,8 @@ android {
         applicationId "com.eurokonverter"
         minSdk 15
         targetSdk 32
-        versionCode 3
-        versionName "1.1.1"
+        versionCode 4
+        versionName "1.2"
 
         setProperty("archivesBaseName", "$applicationId-$versionName")
     }
@@ -25,6 +25,16 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "distribution"
+    productFlavors {
+        gplay {
+            dimension "distribution"
+        }
+        fdroid {
+            dimension "distribution"
         }
     }
 }

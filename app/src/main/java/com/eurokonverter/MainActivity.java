@@ -1,5 +1,6 @@
 package com.eurokonverter;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Selection;
@@ -210,5 +211,22 @@ public class MainActivity extends AppCompatActivity {
 
         scrollToEnd(inputView);
         convert();
+    }
+
+    /**
+     *
+     * @param view
+     */
+    public void onShareApp(View view) {
+
+        Intent intent = new Intent();
+        intent.setType("text/plain");
+        intent.setAction(Intent.ACTION_SEND);
+        intent.putExtra(
+            Intent.EXTRA_TEXT,
+            getString(R.string.ZaKonverzijuKoristim) +
+            getString(R.string.distribution)
+        );
+        startActivity(intent);
     }
 }
