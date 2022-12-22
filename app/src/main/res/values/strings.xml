@@ -6,4 +6,7 @@
     <string name="ZaKonverzijuUpotrebljavam">Za konverziju kuna u eure upotrebljavam ovaj kalkulator. Vjerujem da i tebi može biti koristan:\n</string>
     <string name="Konverzija">Konverzija</string>
     <string name="KusurUEurima">Kusur u eurima</string>
+    <string name="Gotovina">Gotovina</string>
+    <string name="Cijena">Cijena</string>
+    <string name="Kusur">Kusur</string>
 </resources>

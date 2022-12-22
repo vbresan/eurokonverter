@@ -54,6 +54,7 @@
                     android:id="@+id/textViewHRK"
                     style="@style/TextViewAmount"
                     android:text="0"
+                    tools:ignore="HardcodedText"
                 />
                 <include layout="@layout/currency_hr" />
             </LinearLayout>
@@ -67,6 +68,7 @@
                     android:id="@+id/textViewEUR"
                     style="@style/TextViewAmount"
                     android:text="0"
+                    tools:ignore="HardcodedText"
                 />
                 <include layout="@layout/currency_eu" />
             </LinearLayout>
@@ -85,7 +87,7 @@
                 <include layout="@layout/image_hr" />
                 <TextView
                     style="@style/TextViewAmount"
-                    android:hint="Gotovina"
+                    android:hint="@string/Gotovina"
                 />
                 <include layout="@layout/currency_hr" />
             </LinearLayout>
@@ -96,7 +98,7 @@
                 <include layout="@layout/image_hr" />
                 <TextView
                     style="@style/TextViewAmount"
-                    android:hint="Cijena"
+                    android:hint="@string/Cijena"
                 />
                 <include layout="@layout/currency_hr" />
             </LinearLayout>
@@ -106,7 +108,7 @@
                 <include layout="@layout/image_eu" />
                 <TextView
                     style="@style/TextViewAmount"
-                    android:hint="Kusur"
+                    android:hint="@string/Kusur"
                 />
                 <include layout="@layout/currency_eu" />
             </LinearLayout>
@@ -117,6 +119,7 @@
         android:layout_width="match_parent"
         app:columnCount="3"
         app:rowCount="5"
+        tools:ignore="HardcodedText"
         >
         <Button
             app:layout_row="0"
