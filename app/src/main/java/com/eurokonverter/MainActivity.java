@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_SEND);
         intent.putExtra(
             Intent.EXTRA_TEXT,
-            getString(R.string.ZaKonverzijuKoristim) +
+            getString(R.string.ZaKonverzijuUpotrebljavam) +
             getString(R.string.distribution)
         );
         startActivity(intent);
