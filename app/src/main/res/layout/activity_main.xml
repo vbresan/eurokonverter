@@ -9,6 +9,13 @@
     android:gravity="bottom"
     tools:context=".MainActivity"
     >
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:text="@string/PodijeliAplikaciju"
+        android:onClick="onShareApp"
+    />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -262,11 +269,4 @@
             android:onClick="onKeyPressed"
         />
     </androidx.gridlayout.widget.GridLayout>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="?android:attr/buttonBarButtonStyle"
-        android:text="@string/PodijeliAplikaciju"
-        android:onClick="onShareApp"
-    />
 </LinearLayout>
