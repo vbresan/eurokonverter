@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Selection;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -12,19 +13,68 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.eurokonverter.util.CustomScrollingMovementMethod;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.Locale;
 
 /**
  *
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity
+    extends     AppCompatActivity
+    implements  TabLayout.OnTabSelectedListener {
+
+    /**
+     *
+     */
+    class Tab {
+
+        private TextView inputView;
+        private TextView outputView;
+
+        /**
+         *
+         */
+        private void convert() {
+
+            double value = getDouble(inputView);
+            if (inputView.getId() == R.id.textViewHRK) {
+                value /= CONVERSION_RATE;
+            } else {
+                value *= CONVERSION_RATE;
+            }
+
+            setDouble(outputView, value);
+            scrollToEnd(outputView);
+        }
+
+        /**
+         *
+         */
+        private void calculate() {
+
+            try {
+                double cash   = getDouble(findViewById(R.id.textViewCash));
+                double price  = getDouble(findViewById(R.id.textViewPrice));
+                double change = (cash - price) / CONVERSION_RATE;
+
+                if (change > 0) {
+                    setDouble(outputView, change);
+                    scrollToEnd(outputView);
+                } else {
+                    outputView.setText("");
+                }
+            } catch (NumberFormatException e) {
+                outputView.setText("");
+            }
+        }
+    }
+
+    private int         selectedTab;
+    private final Tab[] tabs = { new Tab(), new Tab() };
 
     private final double CONVERSION_RATE = 7.53450;
 
-    private LinearLayout selectedView;
-    private TextView     inputView;
-    private TextView     outputView;
 
     /**
      *
@@ -54,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param layoutId
      */
-    private void setSelectedView(int layoutId) {
+    private void setSelectedCurrencyView(int layoutId) {
 
         LinearLayout hrk = findViewById(R.id.linearLayoutHRK);
         LinearLayout eur = findViewById(R.id.linearLayoutEUR);
@@ -67,16 +117,40 @@ public class MainActivity extends AppCompatActivity {
             eur.setBackgroundColor(Color.TRANSPARENT);
             hrk.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
 
-            inputView    = hrk.findViewById(R.id.textViewHRK);
-            outputView   = eur.findViewById(R.id.textViewEUR);
-            selectedView = hrk;
+            tabs[0].inputView  = hrk.findViewById(R.id.textViewHRK);
+            tabs[0].outputView = eur.findViewById(R.id.textViewEUR);
         } else {
             hrk.setBackgroundColor(Color.TRANSPARENT);
             eur.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
 
-            inputView    = eur.findViewById(R.id.textViewEUR);
-            outputView   = hrk.findViewById(R.id.textViewHRK);
-            selectedView = eur;
+            tabs[0].inputView  = eur.findViewById(R.id.textViewEUR);
+            tabs[0].outputView = hrk.findViewById(R.id.textViewHRK);
+        }
+    }
+
+    /**
+     *
+     * @param layoutId
+     */
+    private void setSelectedChangeView(int layoutId) {
+
+        LinearLayout cash  = findViewById(R.id.linearLayoutCash);
+        LinearLayout price = findViewById(R.id.linearLayoutPrice);
+
+        if (cash == null || price == null) {
+            return;
+        }
+
+        if (layoutId == R.id.linearLayoutCash) {
+            price.setBackgroundColor(Color.TRANSPARENT);
+            cash.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
+
+            tabs[1].inputView = cash.findViewById(R.id.textViewCash);
+        } else {
+            cash.setBackgroundColor(Color.TRANSPARENT);
+            price.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
+
+            tabs[1].inputView = price.findViewById(R.id.textViewPrice);
         }
     }
 
@@ -134,17 +208,12 @@ public class MainActivity extends AppCompatActivity {
     /**
      *
      */
-    private void convert() {
+    private void setTabListener() {
 
-        double value = getDouble(inputView);
-        if (selectedView.getId() == R.id.linearLayoutHRK) {
-            value /= CONVERSION_RATE;
-        } else {
-            value *= CONVERSION_RATE;
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        if (tabLayout != null) {
+            tabLayout.addOnTabSelectedListener(this);
         }
-
-        setDouble(outputView, value);
-        scrollToEnd(outputView);
     }
 
     @Override
@@ -155,15 +224,32 @@ public class MainActivity extends AppCompatActivity {
         setInputViewScrolling(R.id.textViewHRK);
         setInputViewScrolling(R.id.textViewEUR);
 
-        setSelectedView(R.id.linearLayoutHRK);
+        setInputViewScrolling(R.id.textViewCash);
+        setInputViewScrolling(R.id.textViewPrice);
+        setInputViewScrolling(R.id.textViewChange);
+
+        setSelectedCurrencyView(R.id.linearLayoutHRK);
+        setSelectedChangeView(R.id.linearLayoutCash);
+
+        tabs[1].outputView = findViewById(R.id.textViewChange);
+
+        setTabListener();
     }
 
     /**
      *
      * @param view
      */
-    public void onCurrencySelected(View view) {
-        setSelectedView(view.getId());
+    public void onCurrencyViewSelected(View view) {
+        setSelectedCurrencyView(view.getId());
+    }
+
+    /**
+     *
+     * @param view
+     */
+    public void onChangeViewSelected(View view) {
+        setSelectedChangeView(view.getId());
     }
 
     /**
@@ -172,20 +258,21 @@ public class MainActivity extends AppCompatActivity {
      */
     public void onKeyPressed(View view) {
 
-        if (selectedView == null || inputView == null) {
+        TextView inputView = tabs[selectedTab].inputView;
+        if (inputView == null) {
             return;
         }
 
         char key = ((Button) view).getText().toString().charAt(0);
         if (key == 'C') {
-            inputView.setText("0");
+            inputView.setText(selectedTab == 0 ? "0" : "");
         } else if (key == 8592) {
 
             int length = inputView.length();
             if (length > 1) {
                 inputView.setText(inputView.getText().subSequence(0, length - 1));
             } else {
-                inputView.setText("0");
+                inputView.setText(selectedTab == 0 ? "0" : "");
             }
         } else if (key == ',') {
             if (!inputView.getText().toString().contains(",")) {
@@ -205,12 +292,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        if (!inputView.getText().toString().contains(",")) {
+        String string = inputView.getText().toString();
+        if (!TextUtils.isEmpty(string) && !string.contains(",")) {
             setDoubleNoDecimals(inputView, getDouble(inputView));
         }
 
         scrollToEnd(inputView);
-        convert();
+        if (selectedTab == 0) {
+            tabs[selectedTab].convert();
+        } else {
+            tabs[selectedTab].calculate();
+        }
     }
 
     /**
@@ -228,5 +320,35 @@ public class MainActivity extends AppCompatActivity {
             getString(R.string.distribution)
         );
         startActivity(intent);
+    }
+
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+
+        View conversion = findViewById(R.id.linearLayoutContainerConversion);
+        View change     = findViewById(R.id.linearLayoutContainerChange);
+
+        if (conversion == null || change == null) {
+            return;
+        }
+
+        selectedTab = tab.getPosition();
+        if (selectedTab == 0) {
+            change.setVisibility(View.INVISIBLE);
+            conversion.setVisibility(View.VISIBLE);
+        } else {
+            conversion.setVisibility(View.INVISIBLE);
+            change.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+        // do nothing
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+        // do nothing
     }
 }

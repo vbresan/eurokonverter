@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         >
         <LinearLayout
-            android:id="@+id/linearLayoutConversion"
+            android:id="@+id/linearLayoutContainerConversion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -47,7 +47,7 @@
             <LinearLayout
                 android:id="@+id/linearLayoutHRK"
                 style="@style/LayoutInputOutputRow"
-                android:onClick="onCurrencySelected"
+                android:onClick="onCurrencyViewSelected"
                 >
                 <include layout="@layout/image_hr" />
                 <TextView
@@ -61,7 +61,7 @@
             <LinearLayout
                 android:id="@+id/linearLayoutEUR"
                 style="@style/LayoutInputOutputRow"
-                android:onClick="onCurrencySelected"
+                android:onClick="onCurrencyViewSelected"
                 >
                 <include layout="@layout/image_eu" />
                 <TextView
@@ -74,39 +74,45 @@
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/linearLayoutChange"
+            android:id="@+id/linearLayoutContainerChange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:visibility="invisible"
             >
             <LinearLayout
+                android:id="@+id/linearLayoutCash"
                 style="@style/LayoutInputOutputRow"
-                android:onClick="onCurrencySelected"
+                android:onClick="onChangeViewSelected"
                 >
                 <include layout="@layout/image_hr" />
                 <TextView
+                    android:id="@+id/textViewCash"
                     style="@style/TextViewAmount"
                     android:hint="@string/Gotovina"
                 />
                 <include layout="@layout/currency_hr" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/linearLayoutPrice"
                 style="@style/LayoutInputOutputRow"
-                android:onClick="onCurrencySelected"
+                android:onClick="onChangeViewSelected"
                 >
                 <include layout="@layout/image_hr" />
                 <TextView
+                    android:id="@+id/textViewPrice"
                     style="@style/TextViewAmount"
                     android:hint="@string/Cijena"
                 />
                 <include layout="@layout/currency_hr" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/linearLayoutChange"
                 style="@style/LayoutInputOutputRow"
                 >
                 <include layout="@layout/image_eu" />
                 <TextView
+                    android:id="@+id/textViewChange"
                     style="@style/TextViewAmount"
                     android:hint="@string/Kusur"
                 />
