@@ -308,7 +308,7 @@ public class MainActivity extends TabListenerActivity {
      *
      * @param view
      */
-    public void onShareApp(View view) {
+    public void onShare(View view) {
 
         Intent intent = new Intent();
         intent.setType("text/plain");

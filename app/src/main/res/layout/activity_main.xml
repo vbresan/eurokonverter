@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         style="?android:attr/buttonBarButtonStyle"
         android:text="@string/PodijeliAplikaciju"
-        android:onClick="onShareApp"
+        android:onClick="onShare"
     />
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
