@@ -1,0 +1,2 @@
+Adding calculation of change in euros
+Adding app sharing via QR code or link

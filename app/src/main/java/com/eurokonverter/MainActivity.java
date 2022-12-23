@@ -310,14 +310,7 @@ public class MainActivity extends TabListenerActivity {
      */
     public void onShare(View view) {
 
-        Intent intent = new Intent();
-        intent.setType("text/plain");
-        intent.setAction(Intent.ACTION_SEND);
-        intent.putExtra(
-            Intent.EXTRA_TEXT,
-            getString(R.string.ZaKonverzijuUpotrebljavam) +
-            getString(R.string.distribution)
-        );
+        Intent intent = new Intent(this, ShareActivity.class);
         startActivity(intent);
     }
 
