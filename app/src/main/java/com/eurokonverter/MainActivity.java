@@ -27,6 +27,9 @@ public class MainActivity extends TabListenerActivity {
      */
     class Tab {
 
+        private static final int CONVERSION  = 0;
+        private static final int CALCULATION = 1;
+
         private TextView inputView;
         private TextView outputView;
 
@@ -62,7 +65,7 @@ public class MainActivity extends TabListenerActivity {
                 } else {
                     outputView.setText("");
                 }
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 outputView.setText("");
             }
         }
@@ -71,7 +74,7 @@ public class MainActivity extends TabListenerActivity {
     private int         selectedTab;
     private final Tab[] tabs = { new Tab(), new Tab() };
 
-    private final double CONVERSION_RATE = 7.53450;
+    private static final double CONVERSION_RATE = 7.53450;
 
 
     /**
@@ -115,14 +118,14 @@ public class MainActivity extends TabListenerActivity {
             eur.setBackgroundColor(Color.TRANSPARENT);
             hrk.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
 
-            tabs[0].inputView  = hrk.findViewById(R.id.textViewHRK);
-            tabs[0].outputView = eur.findViewById(R.id.textViewEUR);
+            tabs[Tab.CONVERSION].inputView  = hrk.findViewById(R.id.textViewHRK);
+            tabs[Tab.CONVERSION].outputView = eur.findViewById(R.id.textViewEUR);
         } else {
             hrk.setBackgroundColor(Color.TRANSPARENT);
             eur.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
 
-            tabs[0].inputView  = eur.findViewById(R.id.textViewEUR);
-            tabs[0].outputView = hrk.findViewById(R.id.textViewHRK);
+            tabs[Tab.CONVERSION].inputView  = eur.findViewById(R.id.textViewEUR);
+            tabs[Tab.CONVERSION].outputView = hrk.findViewById(R.id.textViewHRK);
         }
     }
 
@@ -142,13 +145,11 @@ public class MainActivity extends TabListenerActivity {
         if (layoutId == R.id.linearLayoutCash) {
             price.setBackgroundColor(Color.TRANSPARENT);
             cash.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
-
-            tabs[1].inputView = cash.findViewById(R.id.textViewCash);
+            tabs[Tab.CALCULATION].inputView = cash.findViewById(R.id.textViewCash);
         } else {
             cash.setBackgroundColor(Color.TRANSPARENT);
             price.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
-
-            tabs[1].inputView = price.findViewById(R.id.textViewPrice);
+            tabs[Tab.CALCULATION].inputView = price.findViewById(R.id.textViewPrice);
         }
     }
 
@@ -229,7 +230,7 @@ public class MainActivity extends TabListenerActivity {
         setSelectedCurrencyView(R.id.linearLayoutHRK);
         setSelectedChangeView(R.id.linearLayoutCash);
 
-        tabs[1].outputView = findViewById(R.id.textViewChange);
+        tabs[Tab.CALCULATION].outputView = findViewById(R.id.textViewChange);
 
         setTabListener();
     }
@@ -263,14 +264,14 @@ public class MainActivity extends TabListenerActivity {
 
         char key = ((Button) view).getText().toString().charAt(0);
         if (key == 'C') {
-            inputView.setText(selectedTab == 0 ? "0" : "");
+            inputView.setText(selectedTab == Tab.CONVERSION ? "0" : "");
         } else if (key == 8592) {
 
             int length = inputView.length();
             if (length > 1) {
                 inputView.setText(inputView.getText().subSequence(0, length - 1));
             } else {
-                inputView.setText(selectedTab == 0 ? "0" : "");
+                inputView.setText(selectedTab == Tab.CONVERSION ? "0" : "");
             }
         } else if (key == ',') {
             if (!inputView.getText().toString().contains(",")) {
@@ -296,7 +297,7 @@ public class MainActivity extends TabListenerActivity {
         }
 
         scrollToEnd(inputView);
-        if (selectedTab == 0) {
+        if (selectedTab == Tab.CONVERSION) {
             tabs[selectedTab].convert();
         } else {
             tabs[selectedTab].calculate();
@@ -331,7 +332,7 @@ public class MainActivity extends TabListenerActivity {
         }
 
         selectedTab = tab.getPosition();
-        if (selectedTab == 0) {
+        if (selectedTab == Tab.CONVERSION) {
             change.setVisibility(View.INVISIBLE);
             conversion.setVisibility(View.VISIBLE);
         } else {
