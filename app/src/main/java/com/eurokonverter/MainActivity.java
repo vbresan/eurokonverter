@@ -10,9 +10,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.eurokonverter.util.CustomScrollingMovementMethod;
+import com.eurokonverter.util.TabListenerActivity;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.Locale;
@@ -20,9 +19,7 @@ import java.util.Locale;
 /**
  *
  */
-public class MainActivity
-    extends     AppCompatActivity
-    implements  TabLayout.OnTabSelectedListener {
+public class MainActivity extends TabListenerActivity {
 
     /**
      *
@@ -340,15 +337,5 @@ public class MainActivity
             conversion.setVisibility(View.INVISIBLE);
             change.setVisibility(View.VISIBLE);
         }
-    }
-
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-        // do nothing
-    }
-
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
-        // do nothing
     }
 }
