@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Euro konverter</string>
-    <string name="distribution"></string>
 
     <string name="PodijeliAplikaciju">Podijeli aplikaciju</string>
     <string name="ZaKonverzijuUpotrebljavam">Za konverziju kuna u eure upotrebljavam ovaj kalkulator. Vjerujem da i tebi može biti koristan:\n</string>
