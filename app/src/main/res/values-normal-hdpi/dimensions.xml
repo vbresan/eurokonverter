@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image">44dp</dimen>
+    <dimen name="corner_radius">22dp</dimen>
+    <dimen name="font_size">30sp</dimen>
+</resources>
+<!--
+Nokia 1
+-->

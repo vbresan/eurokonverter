@@ -10,13 +10,7 @@
     tools:context=".MainActivity"
     >
     <include layout="@layout/image_header" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="?android:attr/buttonBarButtonStyle"
-        android:text="@string/PodijeliAplikaciju"
-        android:onClick="onShare"
-    />
+    <include layout="@layout/button_share_header" />
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
@@ -195,6 +189,7 @@
             android:text="9"
             style="@style/ButtonNumericKeyboard"
         />
+        <include layout="@layout/button_share_numeric" />
         <Button
             app:layout_row="4"
             app:layout_column="1"
