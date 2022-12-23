@@ -324,20 +324,20 @@ public class MainActivity extends TabListenerActivity {
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
 
-        View conversion = findViewById(R.id.linearLayoutContainerConversion);
-        View change     = findViewById(R.id.linearLayoutContainerChange);
+        View conversion  = findViewById(R.id.linearLayoutContainerConversion);
+        View calculation = findViewById(R.id.linearLayoutContainerCalculation);
 
-        if (conversion == null || change == null) {
+        if (conversion == null || calculation == null) {
             return;
         }
 
         selectedTab = tab.getPosition();
         if (selectedTab == Tab.CONVERSION) {
-            change.setVisibility(View.INVISIBLE);
+            calculation.setVisibility(View.INVISIBLE);
             conversion.setVisibility(View.VISIBLE);
         } else {
             conversion.setVisibility(View.INVISIBLE);
-            change.setVisibility(View.VISIBLE);
+            calculation.setVisibility(View.VISIBLE);
         }
     }
 }
