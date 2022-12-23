@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.eurokonverter.util.CustomScrollingMovementMethod;
+import com.eurokonverter.util.CustomScrollingMovementMethod.Callback;
 import com.eurokonverter.util.TabListenerActivity;
 import com.google.android.material.tabs.TabLayout;
 
@@ -86,14 +87,14 @@ public class MainActivity extends TabListenerActivity {
     /**
      *
      */
-    private void setInputViewScrolling(int id) {
+    private void setInputViewScrolling(int id, Callback callback) {
 
         TextView inputView = findViewById(id);
         if (inputView == null) {
             return;
         }
 
-        inputView.setMovementMethod(new CustomScrollingMovementMethod(this));
+        inputView.setMovementMethod(new CustomScrollingMovementMethod(this, callback));
         scrollToEnd(inputView);
     }
 
@@ -218,12 +219,12 @@ public class MainActivity extends TabListenerActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setInputViewScrolling(R.id.textViewHRK);
-        setInputViewScrolling(R.id.textViewEUR);
+        setInputViewScrolling(R.id.textViewHRK, this::onCurrencyViewSelected);
+        setInputViewScrolling(R.id.textViewEUR, this::onCurrencyViewSelected);
 
-        setInputViewScrolling(R.id.textViewCash);
-        setInputViewScrolling(R.id.textViewPrice);
-        setInputViewScrolling(R.id.textViewChange);
+        setInputViewScrolling(R.id.textViewCash,   this::onChangeViewSelected);
+        setInputViewScrolling(R.id.textViewPrice,  this::onChangeViewSelected);
+        setInputViewScrolling(R.id.textViewChange, this::onChangeViewSelected);
 
         setSelectedCurrencyView(R.id.linearLayoutHRK);
         setSelectedChangeView(R.id.linearLayoutCash);
