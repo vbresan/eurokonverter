@@ -1,0 +1,12 @@
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <ImageButton
+        app:layout_row="4"
+        app:layout_column="0"
+        android:src="@android:drawable/ic_menu_share"
+        style="@style/ButtonNumericKeyboard"
+        android:onClick="onShare"
+    />
+</merge>
