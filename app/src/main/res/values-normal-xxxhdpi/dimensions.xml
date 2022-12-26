@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image">46dp</dimen>
+    <dimen name="corner_radius">23dp</dimen>
+    <dimen name="font_size">34sp</dimen>
+</resources>
+<!--
+Motorola Moto Z (XT1650), Nexus 6, Nexus 6P
+-->
