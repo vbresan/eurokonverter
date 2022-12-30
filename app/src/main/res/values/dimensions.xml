@@ -2,5 +2,5 @@
 <resources>
     <dimen name="image">50dp</dimen>
     <dimen name="corner_radius">25dp</dimen>
-    <dimen name="font_size">40sp</dimen>
+    <dimen name="font_size">40dp</dimen>
 </resources>

@@ -2,7 +2,7 @@
 <resources>
     <dimen name="image">44dp</dimen>
     <dimen name="corner_radius">22dp</dimen>
-    <dimen name="font_size">30sp</dimen>
+    <dimen name="font_size">30dp</dimen>
 </resources>
 <!--
 Nokia 1

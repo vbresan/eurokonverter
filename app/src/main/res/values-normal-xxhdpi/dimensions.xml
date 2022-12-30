@@ -2,7 +2,7 @@
 <resources>
     <dimen name="image">50dp</dimen>
     <dimen name="corner_radius">25dp</dimen>
-    <dimen name="font_size">38sp</dimen>
+    <dimen name="font_size">38dp</dimen>
 </resources>
 <!--
 Xiaomi Redmi Note 2, HMD Global Nokia 6.1, Pixel 4-6

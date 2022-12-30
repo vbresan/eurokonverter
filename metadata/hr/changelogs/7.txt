@@ -1,0 +1,1 @@
+Ignoriranje sistemske veličine fonta za numeričku tipkovnicu

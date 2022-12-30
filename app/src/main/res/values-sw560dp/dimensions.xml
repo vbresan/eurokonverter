@@ -2,7 +2,7 @@
 <resources>
     <dimen name="image">74dp</dimen>
     <dimen name="corner_radius">37dp</dimen>
-    <dimen name="font_size">60sp</dimen>
+    <dimen name="font_size">60dp</dimen>
 </resources>
 <!--
 Tablet devices: Nexus 7
