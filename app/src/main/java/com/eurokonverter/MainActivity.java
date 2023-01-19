@@ -227,7 +227,7 @@ public class MainActivity extends TabListenerActivity {
         setInputViewScrolling(R.id.textViewPrice,  this::onChangeViewSelected);
         setInputViewScrolling(R.id.textViewChange, this::onChangeViewSelected);
 
-        setSelectedCurrencyView(R.id.linearLayoutHRK);
+        setSelectedCurrencyView(R.id.linearLayoutEUR);
         setSelectedChangeView(R.id.linearLayoutCash);
 
         tabs[Tab.CALCULATION].outputView = findViewById(R.id.textViewChange);
