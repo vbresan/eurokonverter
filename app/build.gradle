@@ -1,22 +1,20 @@
-plugins {
-    id 'com.android.application'
-}
+apply plugin: "com.android.application"
 
 android {
-    compileSdk 32
-    buildToolsVersion "33.0.0"
+    namespace "com.eurokonverter"
+    compileSdk 35
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     defaultConfig {
         applicationId "com.eurokonverter"
         minSdk 15
-        targetSdk 32
-        versionCode 8
-        versionName "2.0.3"
+        targetSdk 35
+        versionCode 9
+        versionName "2.0.4"
 
         setProperty("archivesBaseName", "$applicationId-$versionName")
     }
@@ -24,25 +22,30 @@ android {
     buildTypes {
         release {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
 
-    flavorDimensions "distribution"
+    flavorDimensions = ["distribution"]
     productFlavors {
         gplay {
             dimension "distribution"
         }
         fdroid {
             dimension "distribution"
+
+            dependenciesInfo {
+                includeInApk = false
+                includeInBundle = false
+            }
         }
     }
 }
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation 'androidx.gridlayout:gridlayout:1.0.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.appcompat:appcompat:1.5.1"
+    implementation "com.google.android.material:material:1.7.0"
+    implementation "androidx.gridlayout:gridlayout:1.0.0"
+    implementation "androidx.cardview:cardview:1.0.0"
 }
