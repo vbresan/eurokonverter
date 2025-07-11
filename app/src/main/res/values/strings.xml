@@ -1,16 +1,23 @@
 <resources>
+
+    <!-- Even when the preferred app language is changed to Croatian, the
+         app name on screen stays in Bulgarian. For those reasons, at least for
+         now, I choose the name to be default one in latin letters.
+    -->
     <string name="app_name">Euro konverter</string>
-    <string name="product_website">eurokonverter.com/hr/</string>
+    <!--
+    <string name="app_name">Евро конвертор</string>
+    -->
+    <string name="product_website">eurokonverter.com</string>
 
-    <string name="PodijeliAplikaciju">Podijeli aplikaciju</string>
-    <string name="ZaKonverzijuUpotrebljavam">Za konverziju kuna u eure upotrebljavam ovaj kalkulator. Vjerujem da će i tebi biti koristan:\n</string>
-    <string name="Konverzija">Konverzija</string>
-    <string name="KusurUEurima">Kusur u eurima</string>
-    <string name="Gotovina">Gotovina</string>
-    <string name="Cijena">Cijena</string>
-    <string name="Kusur">Kusur</string>
-    <string name="SkenirajteQR">Skeniraj QR kôd mobitelom sa kojim želiš preuzeti aplikaciju.</string>
-    <string name="IliPosaljiLink">Ili nekom drugom pošalji link za preuzimanje.</string>
-    <string name="PosaljiLink">Pošalji link</string>
-
+    <string name="PodijeliAplikaciju">Сподели приложението</string>
+    <string name="ZaKonverzijuUpotrebljavam">За конвертиране на левове в евро използвам този калкулатор. Вярвам, че ще бъде полезен и за теб:\n</string>
+    <string name="Konverzija">Конвертиране</string>
+    <string name="KusurUEurima">Ресто в евро</string>
+    <string name="Gotovina">Кеш</string>
+    <string name="Cijena">Цена</string>
+    <string name="Kusur">Ресто</string>
+    <string name="SkenirajteQR">Сканирай QR кода с телефона, с който искаш да изтеглиш приложението.</string>
+    <string name="IliPosaljiLink">Или изпрати линк за изтегляне на друг човек.</string>
+    <string name="PosaljiLink">Изпрати линк</string>
 </resources>

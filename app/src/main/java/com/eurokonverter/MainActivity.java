@@ -39,10 +39,10 @@ public class MainActivity extends TabListenerActivity {
         private void convert() {
 
             double value = getDouble(inputView);
-            if (inputView.getId() == R.id.textViewHRK) {
-                value /= CONVERSION_RATE;
+            if (inputView.getId() == R.id.textViewCurrencyOther) {
+                value /= conversionRate;
             } else {
-                value *= CONVERSION_RATE;
+                value *= conversionRate;
             }
 
             setDouble(outputView, value);
@@ -57,7 +57,7 @@ public class MainActivity extends TabListenerActivity {
             try {
                 double cash   = getDouble(findViewById(R.id.textViewCash));
                 double price  = getDouble(findViewById(R.id.textViewPrice));
-                double change = (cash - price) / CONVERSION_RATE;
+                double change = (cash - price) / conversionRate;
 
                 if (change > 0) {
                     setDouble(outputView, change);
@@ -74,7 +74,7 @@ public class MainActivity extends TabListenerActivity {
     private int         selectedTab;
     private final Tab[] tabs = { new Tab(), new Tab() };
 
-    private static final double CONVERSION_RATE = 7.53450;
+    private double conversionRate = 7.53450;
 
 
     /**
@@ -107,25 +107,25 @@ public class MainActivity extends TabListenerActivity {
      */
     private void setSelectedCurrencyView(int layoutId) {
 
-        LinearLayout hrk = findViewById(R.id.linearLayoutHRK);
-        LinearLayout eur = findViewById(R.id.linearLayoutEUR);
+        LinearLayout other = findViewById(R.id.linearLayoutCurrencyOther);
+        LinearLayout euro  = findViewById(R.id.linearLayoutCurrencyEuro);
 
-        if (hrk == null || eur == null) {
+        if (other == null || euro == null) {
             return;
         }
 
-        if (layoutId == R.id.linearLayoutHRK) {
-            eur.setBackgroundColor(Color.TRANSPARENT);
-            hrk.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
+        if (layoutId == R.id.linearLayoutCurrencyOther) {
+            euro.setBackgroundColor(Color.TRANSPARENT);
+            other.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
 
-            tabs[Tab.CONVERSION].inputView  = hrk.findViewById(R.id.textViewHRK);
-            tabs[Tab.CONVERSION].outputView = eur.findViewById(R.id.textViewEUR);
+            tabs[Tab.CONVERSION].inputView  = other.findViewById(R.id.textViewCurrencyOther);
+            tabs[Tab.CONVERSION].outputView = euro.findViewById(R.id.textViewCurrencyEuro);
         } else {
-            hrk.setBackgroundColor(Color.TRANSPARENT);
-            eur.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
+            other.setBackgroundColor(Color.TRANSPARENT);
+            euro.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary));
 
-            tabs[Tab.CONVERSION].inputView  = eur.findViewById(R.id.textViewEUR);
-            tabs[Tab.CONVERSION].outputView = hrk.findViewById(R.id.textViewHRK);
+            tabs[Tab.CONVERSION].inputView  = euro.findViewById(R.id.textViewCurrencyEuro);
+            tabs[Tab.CONVERSION].outputView = other.findViewById(R.id.textViewCurrencyOther);
         }
     }
 
@@ -215,19 +215,39 @@ public class MainActivity extends TabListenerActivity {
         }
     }
 
+    /**
+     *
+     * @return
+     */
+    private int getPreselectedCurrencyView() {
+
+        int[] layoutIds = {
+            R.id.linearLayoutCurrencyOther,
+            R.id.linearLayoutCurrencyEuro
+        };
+
+        int index =
+            getResources()
+                .getInteger(R.integer.preselected_currency_view_index);
+
+        return layoutIds[index];
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setInputViewScrolling(R.id.textViewHRK, this::onCurrencyViewSelected);
-        setInputViewScrolling(R.id.textViewEUR, this::onCurrencyViewSelected);
+        conversionRate = Double.parseDouble(getString(R.string.conversion_rate));
+
+        setInputViewScrolling(R.id.textViewCurrencyOther, this::onCurrencyViewSelected);
+        setInputViewScrolling(R.id.textViewCurrencyEuro,  this::onCurrencyViewSelected);
 
         setInputViewScrolling(R.id.textViewCash,   this::onChangeViewSelected);
         setInputViewScrolling(R.id.textViewPrice,  this::onChangeViewSelected);
         setInputViewScrolling(R.id.textViewChange, this::onChangeViewSelected);
 
-        setSelectedCurrencyView(R.id.linearLayoutEUR);
+        setSelectedCurrencyView(getPreselectedCurrencyView());
         setSelectedChangeView(R.id.linearLayoutCash);
 
         tabs[Tab.CALCULATION].outputView = findViewById(R.id.textViewChange);

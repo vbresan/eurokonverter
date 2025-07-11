@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Euro konverter</string>
+    <string name="product_website">eurokonverter.com/hr/</string>
+
+    <string name="PodijeliAplikaciju">Podijeli aplikaciju</string>
+    <string name="ZaKonverzijuUpotrebljavam">Za konverziju kuna u eure upotrebljavam ovaj kalkulator. Vjerujem da će i tebi biti koristan:\n</string>
+    <string name="Konverzija">Konverzija</string>
+    <string name="KusurUEurima">Kusur u eurima</string>
+    <string name="Gotovina">Gotovina</string>
+    <string name="Cijena">Cijena</string>
+    <string name="Kusur">Kusur</string>
+    <string name="SkenirajteQR">Skeniraj QR kôd mobitelom sa kojim želiš preuzeti aplikaciju.</string>
+    <string name="IliPosaljiLink">Ili nekom drugom pošalji link za preuzimanje.</string>
+    <string name="PosaljiLink">Pošalji link</string>
+
+</resources>

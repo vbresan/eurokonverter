@@ -1,0 +1,6 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+   <TextView
+       style="@style/TextViewCurrency"
+       android:text="@string/currency_symbol"
+    />
+</merge>

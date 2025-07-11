@@ -13,7 +13,7 @@
             android:layout_width="@dimen/image"
             android:layout_height="@dimen/image"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_hr"
+            app:srcCompat="@drawable/ic_other"
         />
     </androidx.cardview.widget.CardView>
 </merge>
