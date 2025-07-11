@@ -2,3 +2,4 @@
 
 * Ciljanje android SDK verzije 35
 * Ažuriranje korištenih biblioteka
+* Ažuriranje poveznice na web stranicu

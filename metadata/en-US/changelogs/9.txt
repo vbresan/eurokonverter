@@ -2,3 +2,4 @@
 
 * Targeting android SDK version 35
 * Updating used libraries
+* Updating website URL
