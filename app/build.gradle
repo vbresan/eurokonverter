@@ -33,6 +33,7 @@ android {
     flavorDimensions = ["distribution"]
     productFlavors {
         gplay {
+            minSdk 21   // because of the admob library
             dimension "distribution"
         }
         fdroid {
@@ -58,4 +59,7 @@ dependencies {
     implementation "androidx.gridlayout:gridlayout:1.0.0"
 
     implementation "androidx.cardview:cardview:1.0.0"
+
+    // version 24.0.0+ requires min SDK 23
+    gplayImplementation "com.google.android.gms:play-services-ads:23.6.0"
 }

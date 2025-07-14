@@ -251,8 +251,9 @@ public class MainActivity extends TabListenerActivity {
         setSelectedChangeView(R.id.linearLayoutCash);
 
         tabs[Tab.CALCULATION].outputView = findViewById(R.id.textViewChange);
-
         setTabListener();
+
+        new FlavorSpecific(this).showAd();
     }
 
     /**
