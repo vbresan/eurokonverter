@@ -17,6 +17,8 @@ local.properties
 /gradle/wrapper/gradle-wrapper.jar
 /gradlew
 /gradlew.bat
+/app/build/
 /app/release/
 /app/fdroid/
 /app/gplay/
+*secrets*

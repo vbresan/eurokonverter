@@ -1,0 +1,4 @@
+2.0.5 (2025.07.14)
+
+* Poboljšavanje kontrasta hiperlinkova u svijetloj temi
+* Dodavanje politike privatnosti (u Google Playstore verziji aplikacije)

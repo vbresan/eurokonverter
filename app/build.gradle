@@ -13,8 +13,8 @@ android {
         applicationId "com.eurokonverter"
         minSdk 15
         targetSdk 35
-        versionCode 9
-        versionName "2.0.4"
+        versionCode 10
+        versionName "2.0.5"
 
         setProperty("archivesBaseName", "$applicationId-$versionName")
     }

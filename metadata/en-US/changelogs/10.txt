@@ -1,0 +1,4 @@
+2.0.5 (2025.07.14)
+
+* Contrast enhancement for hyperlinks in light theme
+* Adding privacy policy (in Google Playstore app version)
