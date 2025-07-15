@@ -16,7 +16,7 @@ public class ShareActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
 
-        new FlavorSpecific(this).enablePrivacyPolicyLink();
+        new FlavorSpecific(this).enableView();
     }
 
     /**

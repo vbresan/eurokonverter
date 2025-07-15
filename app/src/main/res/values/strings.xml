@@ -20,4 +20,5 @@
     <string name="SkenirajteQR">Сканирай QR кода с телефона, с който искаш да изтеглиш приложението.</string>
     <string name="IliPosaljiLink">Или изпрати линк за изтегляне на друг човек.</string>
     <string name="PosaljiLink">Изпрати линк</string>
+    <string name="Nazad">Назад</string>
 </resources>

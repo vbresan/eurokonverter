@@ -1,3 +1,4 @@
 <resources>
     <string name="distribution">https://f-droid.org/packages/com.eurokonverter</string>
+    <string name="donation_url">https://ko-fi.com/vbresan/?utm_source=eurokonverter&amp;utm_medium=app&amp;utm_campaign=regular</string>
 </resources>

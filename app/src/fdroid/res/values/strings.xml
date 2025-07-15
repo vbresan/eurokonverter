@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PodrziAplikaciju">Подкрепи приложението</string>
+    <string name="DonacijeDialogNaslov">Това приложение има нужда от твоята подкрепа</string>
+    <string name="DonacijeDialogSadrzaj">
+        Това приложение е безплатно, с отворен код и без реклами или тракери.
+        За да остане такова, ако можеш, дари днес.
+    </string>
+    <string name="Nastavi">Продължи</string>
+</resources>

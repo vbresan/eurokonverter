@@ -51,7 +51,7 @@ public class FlavorSpecific {
         this.activity = activity;
     }
 
-    public void enablePrivacyPolicyLink() {
+    public void enableView() {
 
         TextView textView = activity.findViewById(R.id.textViewPrivacyPolicy);
         if (textView != null) {

@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:paddingBottom="20dp"
+                android:paddingBottom="16dp"
                 android:text="@string/SkenirajteQR"
             />
             <ImageView
@@ -33,8 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
+                android:paddingVertical="16dp"
                 android:layout_gravity="center"
                 android:autoLink="web"
                 android:text="@string/product_website"
@@ -43,8 +42,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:paddingTop="20dp"
-                android:paddingBottom="10dp"
+                android:paddingTop="32dp"
+                android:paddingBottom="16dp"
                 android:text="@string/IliPosaljiLink"
             />
             <Button
@@ -54,14 +53,14 @@
                 android:text="@string/PosaljiLink"
                 android:onClick="onSend"
             />
-            <include layout="@layout/privacy_policy" />
+            <include layout="@layout/flavor_specific_view" />
         </LinearLayout>
     </ScrollView>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="?android:attr/buttonBarButtonStyle"
-        android:text="@android:string/ok"
+        android:text="@string/Nazad"
         android:onClick="onDone"
     />
 </LinearLayout>
