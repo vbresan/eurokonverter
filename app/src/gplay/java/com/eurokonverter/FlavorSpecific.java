@@ -17,7 +17,7 @@ import com.google.android.gms.ads.AdView;
 public class FlavorSpecific {
 
     private static final int MIN_AD_HEIGHT = 50;
-    private static final int MIN_AD_PADDING = 32;
+    private static final int MIN_AD_PADDING = 16;
     private static final int MIN_AD_REQUIRED_SPACE =
         MIN_AD_HEIGHT + MIN_AD_PADDING;
 
