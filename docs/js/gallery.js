@@ -9,7 +9,7 @@ function currentSlide(n) {
 function showSlides(n) {
 	
 	let i;
-  	let slides = document.getElementsByClassName("screenshot");
+  	let slides = document.querySelectorAll(".screenshot, .screenshot-bg");
   	
   	if (n > slides.length) {
 		slideIndex = 1

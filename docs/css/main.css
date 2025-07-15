@@ -29,7 +29,12 @@ table td, table td * {
 
 .screenshot {
 	width:	205px;
-	height:	433px
+	height:	433px;
+}
+
+.screenshot-bg {
+	width:	205px;
+	height:	439px;
 }
 
 .prev, .next {
