@@ -1,0 +1,4 @@
+3.0 (2025.07.16)
+
+* Dodavanje podrške za konverziju bugarskog leva
+* Dodavanje gumba za donacije (u F-Droid verziji aplikacije)
