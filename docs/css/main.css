@@ -1,47 +1,73 @@
-body { 
-	font-family: Helvetica, sans-serif;
-	text-size-adjust: none;
-	-webkit-text-size-adjust: none;
+body {
+	font-family:    Helvetica, sans-serif;
+	font-size:      18px;
+	line-height:    1.5em;
+	margin:         0;
+	padding:        0;
 }
 
 h1 {
-	padding: 0px;
-	margin:  0px;
+    font-size: 2.027rem;
 }
 
-table {
-	font-size: 17px;
+header, nav, main, footer {
+    display:          flex;
+    align-items:      center;
+    justify-content:  center;
 }
 
-table td, table td * {
-    vertical-align: center;
+header {
+    padding: 1rem;
 }
 
-.center {
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
+nav {
+    padding: 0 1rem;
 }
 
-.smallest {
-	font-size: 10px;
+main {
+    padding:        2rem 1rem;
+    gap:            3rem;
+    align-items:    flex-start;
+    flex-wrap:      wrap;
 }
 
-.screenshot {
-	width:	205px;
+section {
+    max-width: 50ch;
+}
+
+section p:first-of-type {
+    margin-top:     0;
+    padding-top:    0;
+}
+
+aside {
+  display:          flex;
+  flex-direction:   column;
+  align-items:      center;
+  gap:              1rem;
+}
+
+footer {
+    font-size: 0.889rem;
+}
+
+.screenshot-hr, .screenshot-bg {
+	width: 205px;
+}
+
+.screenshot-hr {
 	height:	433px;
 }
 
 .screenshot-bg {
-	width:	205px;
 	height:	439px;
 }
 
 .prev, .next {
 	cursor: 		pointer;
-	padding: 		12px;
+	padding: 		1rem;
 	font-weight: 	bold;
-	border-radius:	5px;
+	border-radius:	16px;
 }
 
 .prev:hover, .next:hover {

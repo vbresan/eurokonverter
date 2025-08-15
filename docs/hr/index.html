@@ -3,10 +3,10 @@
 <head>
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta name="description" content="Preuzmite besplatni android app za konverziju eura u hrvatske kune i obratno, po fiksiranom tečaju. Obavite kalkulacije bez napora!">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<title>Euro konverter android app | Kalkulacija eura u hrvatske kune i obratno</title>
   	<link rel="stylesheet" type="text/css" href="../css/main.css" />
   	<script src="../js/gallery.js"></script>
-  	<!-- Global site tag (gtag.js) - Google Analytics -->
   	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9R8PV9ZQJ"></script>
   	<script>
     	window.dataLayer = window.dataLayer || [];
@@ -16,61 +16,63 @@
   	</script>
 </head>
 <body>
-	<table class="center">
-		<tr>
-			<td><img alt="Ikona" src="../img/icon.png" width="72" height="72" /></td>
-			<td><h1>Euro konverter</h1></td>
-		</tr>
-	</table>
-	<br />
-  	<table style="width:710px" class="center">
-  		<tr>
-  			<td>
-  				Kalkulator za konverziju eura u hrvatske kune u (i obratno) po fiksiranom tečaju 1€ = 7.53450 kuna.<br />
-  				<br />
-  				<a href="https://www.youtube.com/watch?v=fQTg4kWF5Jo" target="_blank">Demo video</a><br />
-  				<br />
-				Aplikacija je besplatna, otvorenog kôda, ne sadrži oglase i ne traži pristup internetu.<br />
-				<br />
+	<header>
+		<img alt="Ikona" src="../img/icon.png" width="72" height="72" />
+		<h1>Euro konverter</h1>
+	</header>
+	<main>
+		<aside>
+			<div>
+				<img class="screenshot-hr" src="../img/screenshots-hr/dark-theme/konverzija-primjer.png" alt="Euro konverter screenshot, dark theme, konverzija, primjer"			/>
+				<img class="screenshot-hr" src="../img/screenshots-hr/dark-theme/kusur-izracun-inicijalno.png" alt="Euro konverter screenshot, dark theme, izračun kusura, uvodni ekran"	/>
+				<img class="screenshot-hr" src="../img/screenshots-hr/dark-theme/kusur-izracun-primjer.png" alt="Euro konverter screenshot, dark theme, izračun kusura, primjer"		/>
+				<img class="screenshot-hr" src="../img/screenshots-hr/dark-theme/podijeli-aplikaciju.png" alt="Euro konverter screenshot, dark theme, podijeli aplikaciju"			/>
+				<img class="screenshot-hr" src="../img/screenshots-hr/light-theme/konverzija-primjer.png" alt="Euro konverter screenshot, light theme, konverzija, primjer"			/>
+				<img class="screenshot-hr" src="../img/screenshots-hr/light-theme/kusur-izracun-inicijalno.png" alt="Euro konverter screenshot, light theme, izračun kusura, uvodni ekran"	/>
+				<img class="screenshot-hr" src="../img/screenshots-hr/light-theme/kusur-izracun-primjer.png" alt="Euro konverter screenshot, light theme, izračun kusura, primjer"		/>
+				<img class="screenshot-hr" src="../img/screenshots-hr/light-theme/podijeli-aplikaciju.png" alt="Euro konverter screenshot, light theme, podijeli aplikaciju"			/>
+			</div>
+			<div>
+				<a class="prev" onclick="offsetSlide(-1)">&lt;</a>
+				<span id="slideNumber"></span>
+				<a class="next" onclick="offsetSlide(1)">&gt;</a>
+			</div>
+		</aside>
+		<section>
+			<p>
+				Kalkulator za konverziju eura u hrvatske kune u (i obratno) po
+				fiksiranom tečaju 1€ = 7.53450 kuna.
+			</p>
+			<p>
+				<a href="https://www.youtube.com/watch?v=fQTg4kWF5Jo" target="_blank">Demo video</a>
+			</p>
+			<p>
+				Aplikacija je besplatna, otvorenog kôda, ne sadrži oglase i ne
+				traži pristup internetu.
+			</p>
+			<p>
 				Možete je preuzeti na sljedećim linkovima:<br />
-  				<a href="https://play.google.com/store/apps/details?id=com.eurokonverter&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Dostupno na usluzi Google Play" height="80" /></a>
+				<a href="https://play.google.com/store/apps/details?id=com.eurokonverter&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Dostupno na usluzi Google Play" height="80" /></a>
 				<a href="https://f-droid.org/packages/com.eurokonverter"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on-hr.png" alt="Dostupno na usluzi F-Droid" height="80" /></a>
-				<a href="https://github.com/vbresan/eurokonverter/releases/latest"><img src="../img/badges-hr/get-it-on-github.png" alt="Preuzmite na GitHubu" title="Preuzmite na GitHubu" height="80" /></a><br />
-				<br />
+				<a href="https://github.com/vbresan/eurokonverter/releases/latest"><img src="../img/badges-hr/get-it-on-github.png" alt="Preuzmite na GitHubu" title="Preuzmite na GitHubu" height="80" /></a>
+			</p>
+			<p>
 				<a href="https://github.com/vbresan/eurokonverter_android" target="blank">Otvoreni kôd aplikacije Euro konverter</a>.
-			</td>
-			<td>
-				<div>
-				    <img class="screenshot" src="../img/screenshots-hr/dark-theme/konverzija-primjer.png" alt="Euro konverter screenshot, dark theme, konverzija, primjer"			/>
-				    <img class="screenshot" src="../img/screenshots-hr/dark-theme/kusur-izracun-inicijalno.png" alt="Euro konverter screenshot, dark theme, izračun kusura, uvodni ekran"	/>
-				    <img class="screenshot" src="../img/screenshots-hr/dark-theme/kusur-izracun-primjer.png" alt="Euro konverter screenshot, dark theme, izračun kusura, primjer"		/>
-				    <img class="screenshot" src="../img/screenshots-hr/dark-theme/podijeli-aplikaciju.png" alt="Euro konverter screenshot, dark theme, podijeli aplikaciju"			/>
-				    <img class="screenshot" src="../img/screenshots-hr/light-theme/konverzija-primjer.png" alt="Euro konverter screenshot, light theme, konverzija, primjer"			/>
-				    <img class="screenshot" src="../img/screenshots-hr/light-theme/kusur-izracun-inicijalno.png" alt="Euro konverter screenshot, light theme, izračun kusura, uvodni ekran"	/>
-				    <img class="screenshot" src="../img/screenshots-hr/light-theme/kusur-izracun-primjer.png" alt="Euro konverter screenshot, light theme, izračun kusura, primjer"		/>
-				    <img class="screenshot" src="../img/screenshots-hr/light-theme/podijeli-aplikaciju.png" alt="Euro konverter screenshot, light theme, podijeli aplikaciju"			/>
-				</div>
-				 <div class="center" style="padding-top:10px">
-					 <a class="prev" onclick="plusSlides(-1)">&lt;</a>
-					 <span id="slideNumber"></span>
-					 <a class="next" onclick="plusSlides(1)">&gt;</a>
-				 </div>			
-			</td>
-  		</tr>
-  	</table>
-  	<br />
-  	<br />
-  	<br />
-  	<p style="text-align:center">
-		Partneri: 
-		<a href="https://novine.eu"        target="_blank" rel="noopener noreferrer">Novine.eu - kratke vijesti</a> | 
-		<a href="https://mojamirovina.com" target="_blank" rel="noopener noreferrer">Izračun (kalkulator) mirovine</a> | 
-		<a href="https://uplatime.com"     target="_blank" rel="noopener noreferrer">Uplati me - generator opće uplatnice sa bar kodom</a>
-	</p>
-  	<p style="text-align:center" class="smallest">&#169; Binarna Rješenja</p>
-  	<script type="text/javascript">
+			</p>
+		</section>
+	</main>
+  	<nav>
+		<p>
+			Partneri:
+			<a href="https://novine.eu"        target="_blank" rel="noopener noreferrer">Novine.eu - kratke vijesti</a> |
+			<a href="https://mojamirovina.com" target="_blank" rel="noopener noreferrer">Izračun (kalkulator) mirovine</a> |
+			<a href="https://uplatime.com"     target="_blank" rel="noopener noreferrer">Uplati me - generator opće uplatnice sa bar kodom</a>
+		</p>
+	</nav>
+	<footer>&#169; Binarna Rješenja</footer>
+	<script type="text/javascript">
 	  	let slideIndex = 1;
-	  	showSlides(slideIndex);
+	  	showSlide(slideIndex);
   	</script>
 </body>
 </html>
